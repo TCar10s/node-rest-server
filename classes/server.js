@@ -16,10 +16,13 @@ class Server {
 
   middlewares() {
     // Politica de CORS
-    this.app.use(cors());
+    this.app.use( cors() );
+
+    // Lectura y parseo del BODY
+    this.app.use( express.json() );
 
     // Con la palabra use indicamos que es un miiddleware
-    this.app.use(express.static('public')); // Public directory
+    this.app.use( express.static('public') ); // Public directory
   }
 
   routes() {
